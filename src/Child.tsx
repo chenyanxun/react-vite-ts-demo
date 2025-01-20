@@ -1,13 +1,16 @@
 interface ChildInterface {
   changeName: (name: string) => void
-  changeAge: (age: number) => void
+  changeAge: (age: number) => number
 }
+
 function Child({ changeName, changeAge }: ChildInterface) {
   const setName = () => {
     changeName('lisi')
   }
   const setAge = () => {
-    changeAge(28)
+    const age = 28
+    const age2 = changeAge(age)
+    console.log('age==', age2)
   }
   return (
     <>
